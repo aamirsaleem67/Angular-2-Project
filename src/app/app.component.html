@@ -1,3 +1,35 @@
-<h1>
-  {{title}}
-</h1>
+<!--<input type="text" [(ngModel)]="username"  >
+
+<p>{{username}}</p>
+
+<button [disabled]="checkEmpty()" class="btn btn-primary" (click)="onClick()">Add button</button>-->
+
+
+<!--<button class="btn btn-primary" (click)="onClick()">Display Details</button>
+<p *ngIf="toogle">Secret Message</p>
+<ul>
+    <li *ngFor="let c of counter; let i= index" 
+         [ngStyle]="{backgroundColor: getColor(i)}"
+         [ngClass]="{ 'myColor' : i > 3}">
+
+        <p
+        > {{c}}</p>
+
+    </li>
+-->
+
+<!--<app-header 
+(headerClick)="handleHeaderEvent($event)"
+></app-header>-->
+
+<app-header></app-header>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+          <!--<app-recipes *ngIf="headerValue==='Recipes'"></app-recipes>
+          <app-shopping-list *ngIf="headerValue==='Shopping'"></app-shopping-list>-->
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
