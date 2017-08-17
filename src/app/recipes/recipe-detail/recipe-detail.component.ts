@@ -1,7 +1,7 @@
 import { RecipeService } from './../recipe.service';
 import { ToogleComponentService } from './../../toogle-component.service';
 import { Component, OnInit,Input } from '@angular/core';
-import { ActivatedRoute,Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
@@ -14,7 +14,8 @@ export class RecipeDetailComponent implements OnInit {
   id:number;
   constructor(private toogle: ToogleComponentService,
               private service: RecipeService,
-              private route: ActivatedRoute) { 
+              private route: ActivatedRoute,
+              private router:Router) { 
    
   }
  
@@ -37,5 +38,10 @@ export class RecipeDetailComponent implements OnInit {
    this.service.addIngredientsToList(this.recipeEl.ingredients);
    this.toogle.onToogle("Shopping");
   
+ }
+
+ onDelete(){
+   this.service.deleteRecipe(this.id);
+   this.router.navigate(['/recipes']);
  }
 }
