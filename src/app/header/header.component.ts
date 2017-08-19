@@ -24,4 +24,8 @@ export class HeaderComponent{
             }
         );
     }
+
+    onFetchData(){
+        this.storeService.fetchRecipes();
+    }
 }
