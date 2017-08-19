@@ -1,3 +1,4 @@
+import { DataStorageService } from './shared/data-storage.service';
 import { RecipeService } from './recipes/recipe.service';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,7 +42,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ShoppingListService,ToogleComponentService,RecipeService],
+  providers: [ShoppingListService,ToogleComponentService,RecipeService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
