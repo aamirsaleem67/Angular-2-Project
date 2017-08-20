@@ -1,3 +1,4 @@
+import { AuthService } from './auth/auth.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { RecipeService } from './recipes/recipe.service';
 
@@ -46,7 +47,8 @@ import { SigninComponent } from './auth/signin/signin.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ShoppingListService,ToogleComponentService,RecipeService, DataStorageService],
+  providers: [ShoppingListService,ToogleComponentService,RecipeService, 
+              DataStorageService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
