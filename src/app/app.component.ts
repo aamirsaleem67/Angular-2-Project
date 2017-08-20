@@ -1,6 +1,6 @@
 import { ToogleComponentService } from './toogle-component.service';
 import { Component, OnInit } from '@angular/core';
-
+import * as firebase from 'firebase';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,6 +44,11 @@ export class AppComponent implements OnInit {
      this.toogleServie.toogleComponent.subscribe((header:string)=>{
               this.headerValue=header;
      });
+
+   firebase.initializeApp({
+     apiKey: "AIzaSyAIPyXCCnHPHbXXAGstnU8AmMLbGt6iB-o",
+     authDomain: "ng-recipe-book-7f515.firebaseapp.com"
+   });
   }
   handleHeaderEvent(header:string){
        this.headerValue=header;
