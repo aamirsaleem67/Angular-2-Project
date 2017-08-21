@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
@@ -33,7 +34,8 @@ import { SigninComponent } from './auth/signin/signin.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule
   ],
   providers: [ShoppingListService,ToogleComponentService,RecipeService, 
               DataStorageService,AuthService, AuthGuard],
