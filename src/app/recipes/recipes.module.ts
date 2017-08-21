@@ -1,3 +1,4 @@
+import { RecipesRoutingModule } from './recipes-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirective } from './../shared/dropdown.directive';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports:[
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RecipesRoutingModule
     ],
     providers:[],
 
