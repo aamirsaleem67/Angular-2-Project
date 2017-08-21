@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 export class AuthService{
- token:string='';
+ token:string=null;
  signupUser(email:string, password: string){
     firebase.auth().createUserWithEmailAndPassword(email,password)
     .catch(
@@ -31,5 +31,13 @@ getToken(){
           }
       )
       return this.token;
+}
+
+isAuthenticated(){
+    return this.token != null;
+}
+
+logout(){
+    firebase.auth().signOut();
 }
 }

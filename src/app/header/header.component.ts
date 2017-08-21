@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { Component,Output,EventEmitter } from '@angular/core';
 import { Response } from '@angular/http';
@@ -9,7 +10,7 @@ import { Response } from '@angular/http';
 
 export class HeaderComponent{
     
-    constructor(private storeService: DataStorageService){}
+    constructor(private storeService: DataStorageService, private authService: AuthService){}
     @Output() headerClick=new EventEmitter<string>();
     onClick(header:string){
         this.headerClick.emit(header);
@@ -27,5 +28,9 @@ export class HeaderComponent{
 
     onFetchData(){
         this.storeService.fetchRecipes();
+    }
+
+    onLogout(){
+        this.authService.logout();
     }
 }
