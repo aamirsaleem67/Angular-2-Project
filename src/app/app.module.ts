@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
@@ -16,23 +17,19 @@ import { AppRoutingModule } from './routing.module';
 import { ToogleComponentService } from './toogle-component.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutingModule,
     // RecipesModule,
     ShoppingListModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [ShoppingListService,ToogleComponentService,RecipeService, 
               DataStorageService,AuthService, AuthGuard],
