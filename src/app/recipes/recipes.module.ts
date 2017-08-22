@@ -1,3 +1,5 @@
+import { AuthService } from './../auth/auth.service';
+import { AuthGuard } from './../auth/auth-guard.service';
 import { SharedModule } from './../shared/shared.module';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +26,7 @@ import { CommonModule } from '@angular/common';
         RecipesRoutingModule,
         SharedModule
     ],
-    providers:[],
+    providers:[AuthGuard],
 
 })
 
